@@ -15,7 +15,7 @@ namespace AsyncSolution
             var secondPart = users.Skip(totalCount / 3).Take(totalCount / 3).ToList();
             var thirdPart = users.Skip(2 * totalCount / 3).Take(totalCount / 3).ToList();
 
-            var manager = new Manager();
+            var manager = new MonitorManager();
             Parallel.Invoke(
                 () => manager.DoWork(firstPart),
                 () => manager.DoWork(secondPart),
